@@ -15,9 +15,9 @@ class Verify_New_Reservation extends CI_Controller {
         $this->form_validation->set_rules('surname', 'Surname', 'trim|required|min_length[2]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('address', 'Address', 'trim|required|min_length[3]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('email', 'e-mail', 'trim|required|min_length[6]|max_length[30]|xss_clean|callback__validemail');
-        $this->form_validation->set_rules('adulttickets', 'Adult tickets', 'trim|required|integer|min_length[1]|max_length[2]|xss_clean');
-        $this->form_validation->set_rules('childtickets', 'Child tickets', 'trim|required|integer|min_length[1]|max_length[2]|xss_clean');
-        $this->form_validation->set_rules('seniortickets', 'Senior tickets', 'trim|required|integer|min_length[1]|max_length[2]|xss_clean|callback__checkmaxticketallowed');
+        $this->form_validation->set_rules('adulttickets', 'Adult tickets', 'trim|required|is_natural_no_zero|min_length[1]|max_length[2]|xss_clean');
+        $this->form_validation->set_rules('childtickets', 'Child tickets', 'trim|required|is_natural_no_zero|min_length[1]|max_length[2]|xss_clean');
+        $this->form_validation->set_rules('seniortickets', 'Senior tickets', 'trim|required|is_natural_no_zero|min_length[1]|max_length[2]|xss_clean|callback__checkmaxticketallowed');
 
         if ($this->form_validation->run() == FALSE) {
             $view['page_title'] = 'Ticket reservation';
