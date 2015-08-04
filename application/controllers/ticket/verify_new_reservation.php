@@ -29,7 +29,7 @@ class Verify_New_Reservation extends CI_Controller {
         } else {
             $statement = str_replace("%s", $data['name'], $this->lang->line("msg_confirmation"));
             $this->session->set_flashdata($statement);
-                $hash = md5($this->input->post('email').date("U"));
+            sscanf(crc32($this->input->post(NULL, TRUE).date("U")), "%u", $hash);
                 $sess_array = array(
                     'name' => $this->input->post('name'),
                     'surname' => $this->input->post('surname'),
