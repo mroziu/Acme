@@ -36,12 +36,30 @@
          </tr>
          <tr>
              <td>
+    <label for="phone">Phone number:</label>
+             </td>
+             <td>
+    <input type="text" size="30" value="123-234-345" id="phone" name="phone"/>
+             </td>
+         </tr>
+         <tr>
+             <td>
+    <label for="adulttickets">Gender:</label>
+             </td>
+             <td>
+    <input type="radio" name="gender" value="Male" />Male
+    <input type="radio" name="gender" value="Famale" />Famale
+             </td>
+         </tr>
+         <tr>
+             <td>
     <label for="adulttickets">Adult tickets:</label>
              </td>
              <td>
     <input type="text" size="30" value="1" id="adulttickets" name="adulttickets"/>
              </td>
          </tr>
+         <tr>
          <tr>
              <td>
     <label for="childtickets">Child tickets:</label>

@@ -15,6 +15,8 @@ class Verify_New_Reservation extends CI_Controller {
         $this->form_validation->set_rules('surname', 'Surname', 'trim|required|min_length[2]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('address', 'Address', 'trim|required|min_length[3]|max_length[30]|xss_clean');
         $this->form_validation->set_rules('email', 'e-mail', 'trim|required|min_length[6]|max_length[30]|xss_clean|callback__validemail');
+        $this->form_validation->set_rules('phone', 'Phone number', 'trim|xss_clean');
+        $this->form_validation->set_rules('gender', 'Gender', 'trim|xss_clean');
         $this->form_validation->set_rules('adulttickets', 'Adult tickets', 'trim|required|is_natural_no_zero|min_length[1]|max_length[2]|xss_clean');
         $this->form_validation->set_rules('childtickets', 'Child tickets', 'trim|required|is_natural_no_zero|min_length[1]|max_length[2]|xss_clean');
         $this->form_validation->set_rules('seniortickets', 'Senior tickets', 'trim|required|is_natural_no_zero|min_length[1]|max_length[2]|xss_clean|callback__checkmaxticketallowed');
@@ -33,6 +35,8 @@ class Verify_New_Reservation extends CI_Controller {
                     'surname' => $this->input->post('surname'),
                     'address' => $this->input->post('address'),
                     'email' => $this->input->post('email'),
+                    'phone' => $this->input->post('phone'),
+                    'gender' => $this->input->post('gender'),
                     'adulttickets' => $this->input->post('adulttickets'),
                     'childtickets' => $this->input->post('childtickets'),
                     'seniortickets' => $this->input->post('seniortickets'),

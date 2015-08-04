@@ -36,6 +36,23 @@
          </tr>
          <tr>
              <td>
+    <label for="phone">Phone number:</label>
+             </td>
+             <td>
+    <input type="text" size="30" disabled value="<?php echo $phone ?>" id="phone" name="phone"/>
+             </td>
+         </tr>
+         <tr>
+             <td>
+    <label for="gender">Gender:</label>
+             </td>
+             <td>
+    <input type="radio" name="gender" value="Male" <?php if ($gender === 'Male') echo 'Checked'?>disabled/>Male
+    <input type="radio" name="gender" value="Famale" <?php if ($gender === 'Famale') echo 'Checked' ?>disabled/>Famale
+             </td>
+         </tr>
+         <tr>
+             <td>
     <label for="adulttickets">Adult tickets:</label>
              </td>
              <td>
